@@ -3,7 +3,7 @@ package Patrons.AbstractFactory;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-abstract class Vehicule{
+public abstract class Vehicule{
     public String id;
     public String type;
     public String nom;
