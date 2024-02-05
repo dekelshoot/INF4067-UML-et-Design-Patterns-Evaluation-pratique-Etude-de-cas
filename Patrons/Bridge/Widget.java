@@ -6,4 +6,8 @@ package Patrons.Bridge;
     public  Widget(String contenu){
         this.contenu = contenu;
     };
+
+    public Widget getWidget(){
+        return this;
+    }
 }
