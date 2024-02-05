@@ -1,2 +1,0 @@
-Ceci est une ligne de texte dans mon fichier
-Et une autre ligne
