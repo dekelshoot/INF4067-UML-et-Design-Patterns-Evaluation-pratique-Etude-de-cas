@@ -18,6 +18,7 @@ public abstract class Commande {
         this.etat = etat;
         this.montantHt= this.calculerMontant();
         this.etat = "encours";
+        this.societeCliente = societeCliente;
     }
 
     public void annuler(){

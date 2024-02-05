@@ -1,4 +1,4 @@
-package Patrons.FactoryMethod;
+package Patrons.Builder;
 
 import java.util.ArrayList;
 
@@ -11,10 +11,13 @@ import Patrons.AbstractFactory.VehiculeFactoryElectrique;
 import Patrons.Composite.GroupeSocieteCliente;
 import Patrons.Composite.Societe;
 import Patrons.Composite.SocieteCliente;
+import Patrons.Singleton.LiassViergeDocuments;
+import Patrons.FactoryMethod.*;
 
-public class Client {
+public class Clients {
     public static void main(String[] args) {
-        IvehiculeFactory vehiculeFactory1 = new VehicleFactoryEssence();
+        
+         IvehiculeFactory vehiculeFactory1 = new VehicleFactoryEssence();
         IvehiculeFactory vehiculeFactory2 = new VehiculeFactoryElectrique();
         Automobile automobile = null;
         Scooter scooter = null;
@@ -26,7 +29,7 @@ public class Client {
         ArrayList images= new ArrayList<String>();
         images.add("http://localhost");
 
-
+ 
         Societe societe1 = new SocieteCliente("CMC");
         Societe societe2 = new SocieteCliente("Sorepco");
         GroupeSocieteCliente societe3 = new GroupeSocieteCliente("Fokou");
@@ -42,9 +45,17 @@ public class Client {
 
         Commande commande = null;
 
+                                                                                                                                                    
         commande = fabriqueCommande.fabriqueCommande("A20",societe3,vehicleList, 0);
-        commande.afficherFacture();
         commande.ajouterCommand(scooter);
-        commande.afficherFacture();
+ 
+        Directeur directeur = new Directeur();
+        ArrayList<LiassViergeDocuments> liassDocuments = directeur.construiLiasseDocuments(commande);
+        for(int i=0; i<liassDocuments.size(); i++){
+            liassDocuments.get(i).afficherLiassDocument();
+        }
+        
+
     }
+    
 }
