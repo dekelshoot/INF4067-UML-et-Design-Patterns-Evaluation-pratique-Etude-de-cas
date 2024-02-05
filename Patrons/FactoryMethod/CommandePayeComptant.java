@@ -3,12 +3,14 @@ package Patrons.FactoryMethod;
 import java.util.ArrayList;
 
 import Patrons.AbstractFactory.Vehicule;
+import Patrons.Composite.Societe;
 
 public class CommandePayeComptant extends Commande{
 
-    public CommandePayeComptant(ArrayList<Vehicule> vehicules, String paysLivraison) {
-        super(vehicules, paysLivraison);
+    public CommandePayeComptant(String idCommande,Societe societeCliente,ArrayList<Vehicule> vehicules) {
+        super(idCommande,societeCliente,vehicules);
         this.type = "Comptant";
+        this.idCommande = idCommande;
 
     }
 

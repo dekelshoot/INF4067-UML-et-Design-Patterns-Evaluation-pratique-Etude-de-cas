@@ -8,7 +8,11 @@ import Patrons.AbstractFactory.Scooter;
 import Patrons.AbstractFactory.VehicleFactoryEssence;
 import Patrons.AbstractFactory.Vehicule;
 import Patrons.AbstractFactory.VehiculeFactoryElectrique;
+import Patrons.Composite.GroupeSocieteCliente;
+import Patrons.Composite.Societe;
+import Patrons.Composite.SocieteCliente;
 import Patrons.FactoryMethod.FabriqueCommande;
+import Patrons.FactoryMethod.Commande;
 
 public class Client {
     public static void main(String[] args) {
@@ -33,10 +37,17 @@ public class Client {
         vehicleList.add(scooter);
         vehicleList.add(automobile);
         
+        Societe societe1 = new SocieteCliente("CMC");
+        Societe societe2 = new SocieteCliente("Sorepco");
+        GroupeSocieteCliente societe3 = new GroupeSocieteCliente("Fokou");
+        societe3.ajouterSociete(societe1);
+        societe3.ajouterSociete(societe2);
 
-        Commande commandeCM = new CommandeCameroun(vehicleList, "Cameroun");
-        commandeCM.afficherFacture();
+        Commande commandeCM = new CommandeCreditCameroun("AOO3",societe3,vehicleList);
+        Commande commandeCi = new CommandePayeComptantCoteIvoire("AOO4",societe3,vehicleList);
         commandeCM.ajouterCommand(scooter);
+        commandeCi.ajouterCommand(scooter);
         commandeCM.afficherFacture();
+        commandeCi.afficherFacture();
     }
 }

@@ -1,8 +1,10 @@
 package Patrons.FactoryMethod;
 import java.util.ArrayList;
 import Patrons.AbstractFactory.Vehicule;
-
+import Patrons.Composite.Societe;
 public abstract class Commande {
+    public String idCommande;
+    public Societe societeCliente;
     public String paysLivraison;
     public String etat;
     public String type;
@@ -11,10 +13,9 @@ public abstract class Commande {
     public float montantTva;
     public ArrayList<Vehicule> vehicules;
 
-    public Commande(ArrayList<Vehicule> vehicules, String paysLivraison){
+    public Commande(String idCommande,Societe societeCliente, ArrayList<Vehicule> vehicules){
         this.vehicules = vehicules;
         this.etat = etat;
-        this.paysLivraison =paysLivraison;
         this.montantHt= this.calculerMontant();
         this.etat = "encours";
     }
@@ -34,6 +35,7 @@ public abstract class Commande {
         }
         return montant;
     };
+    
 
     public void ajouterCommand(Vehicule vehicule){
         this.vehicules.add(vehicule);
