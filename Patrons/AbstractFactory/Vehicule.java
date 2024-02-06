@@ -25,13 +25,14 @@ public abstract class Vehicule{
     }
 
     public void afficherVehicule(){
-        System.out.println("\n\t type: " + this.type+"\n\t id: "+this.id+"\n\t nom: " + this.nom+"\n\t carburation: "+this.carburation+"\n\t prix: " + this.prix+"\n\t date d'ajout: "+this.dateAjout+"\n\t options: " );
-        for (String element : this.options) {
-            System.out.println("\t\t - " + element);
-        }
-        System.out.println("\t images: " );
-        for (String element : this.images) {
-            System.out.println("\t\t - " + element);
-        }
+        System.out.println("\n\t type: " + this.type+"\n\t id: "+this.id+"\n\t nom: " + this.nom+"\n\t carburation: "+this.carburation+"\n\t prix: " + this.prix+"\n\t date d'ajout: "+this.dateAjout );
+        // System.out.println("\t options: ");
+        // for (String element : this.options) {
+        //     System.out.println("\t\t - " + element);
+        // }
+        // System.out.println("\t images: " );
+        // for (String element : this.images) {
+        //     System.out.println("\t\t - " + element);
+        // }
     }
 }
